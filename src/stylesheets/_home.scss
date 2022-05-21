@@ -1,0 +1,16 @@
+.landing_image_wrap {
+  top: -5vh;
+  right: 15vh;
+  min-width: 50vh;
+  min-height: 100vh;
+  position: relative;
+}
+#landing_image {
+  width: 175%;
+  height: auto;
+  position: absolute;
+  overflow: hidden;
+}
+.nextsession {
+  height: 150vh;
+}

@@ -1,0 +1,129 @@
+html,
+body {
+  background-color: $main-color;
+  color: $font-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  font-family: $font;
+  transition: background-color 1s ease-in-out;
+}
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+  Button Decorations
+*/
+.button-wrap {
+  transition: all 1s ease-in-out;
+  a {
+    color: $accent-color;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    text-decoration: none;
+  }
+}
+#button_1 {
+  background-color: $accent-color;
+  color: $main-color;
+  padding: 0.5em;
+  transition: all 0.5s ease-in-out;
+}
+#button_1:hover,
+#button_1:focus {
+  background-color: transparent;
+  color: $accent-color;
+  border: 1px solid $accent-color;
+  transition: all 0.5s ease-in-out;
+}
+#button_2 {
+  border: 1px solid $accent-color;
+  background-color: transparent;
+  color: $accent-color;
+  padding: 0.5em;
+  transition: all 0.5s ease-in-out;
+}
+#button_2:hover,
+#button_2:focus {
+  background-color: $accent-color;
+  color: $main-color;
+  transition: all 0.5s ease-in-out;
+}
+
+/*
+  Text Decorations
+*/
+.text-wrap {
+  h1 {
+    font-size: 3rem;
+    font-size: clamp(3rem, 2vw, 1.25rem);
+  }
+  h1 span {
+    font-weight: bold;
+    color: $accent-color;
+  }
+}
+.text-wrap {
+  transition: all 1s ease-in-out;
+  p {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin-bottom: 1.5em;
+  }
+  a {
+    color: $accent-color;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    text-decoration: none;
+  }
+  span {
+    color: $secondary-color;
+  }
+  .bold {
+    font-weight: 900;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+}
+.accent span {
+  color: $accent-color;
+  font-weight: bold;
+}
+.text-wrap p a:hover {
+  text-decoration: underline;
+}
+
+/*
+ Margins, Paddings
+*/
+
+.my-10 {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+.px-10 {
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
+
+/*
+ Visibility Animation
+*/
+.d-show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+}
+.d-not {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+}

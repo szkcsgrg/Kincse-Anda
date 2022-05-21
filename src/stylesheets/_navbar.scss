@@ -1,0 +1,101 @@
+nav {
+  height: 4em;
+  position: fixed;
+  z-index: 1030;
+  transition: transform 1s ease-in-out;
+}
+
+nav .logo {
+  top: 1.5em;
+  left: 1.5em;
+  width: 15em;
+  height: 5em;
+  position: relative;
+}
+#logo {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  overflow: hidden;
+}
+
+.burger {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  height: 3em;
+  width: 3em;
+  background-color: $font-color;
+  border-radius: 50%;
+  z-index: 1030;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5em;
+  right: 1.5em;
+  span {
+    transition: all 0.5s ease-in-out;
+    top: 1em;
+    left: 0.4em;
+    position: relative;
+    display: block;
+    margin: 0.2em;
+    height: 0.2em;
+    width: 1.8em;
+    background-color: $main-color;
+  }
+}
+.burger:hover {
+  height: 5em;
+  width: 5em;
+  background-color: $accent-color;
+  span {
+    top: 2.1em;
+    left: 1.4em;
+  }
+}
+.burger-active {
+  transition: all 0.5s ease-in-out;
+  background-color: $accent-color;
+}
+.burger-active #line1 {
+  transition: all 0.5s ease-in-out;
+  transform: rotate(45deg);
+}
+.burger-active #line2 {
+  transition: all 0.5s ease-in-out;
+  margin-top: -0.4em;
+  transform: rotate(-45deg);
+}
+.burger-active span {
+  transition: all 0.5s ease;
+  background-color: $main-color;
+  top: 1.1em;
+}
+
+.navigation {
+  overflow: hidden;
+  min-height: 100%;
+}
+.navigation-menu {
+  transform: translateX(0);
+  margin: 0;
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: $trans-color;
+  z-index: 1000;
+  ul {
+    margin-top: 5em;
+    list-style: none;
+  }
+  ul li a {
+    transition: all 0.5s ease;
+    text-decoration: none;
+    color: $main-color;
+    font-size: clamp(2.5rem, 1vw, 1.25rem);
+  }
+  ul li a:hover {
+    color: $accent-color;
+    font-size: 3.5rem;
+  }
+}
