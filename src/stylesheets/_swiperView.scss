@@ -1,0 +1,42 @@
+.swiper {
+  //margin-top: 5vh;
+  margin-bottom: 5vh;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+}
+.swiper-slide {
+  margin: 0;
+  padding: 0;
+}
+.swiper-wrapper {
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+}
+
+#swiperImage {
+  width: 60%;
+}
+#product-desc {
+  color: $secondary-color;
+}
+
+@media screen and (min-width: $medium) {
+  .current-products {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  .swiper-wrapper {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (min-width: $large) {
+  .current-products {
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+  }
+
+  .swiper-wrapper {
+    margin-top: 7.5vh;
+    margin-bottom: 7.5vh;
+  }
+}

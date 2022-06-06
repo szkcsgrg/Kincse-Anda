@@ -1,16 +1,69 @@
+.home-landing {
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
 .landing_image_wrap {
-  top: -5vh;
-  right: 15vh;
-  min-width: 50vh;
-  min-height: 100vh;
+  top: -20vh;
+  right: -10vh;
+  width: 50vh;
+  height: 100vh;
   position: relative;
 }
 #landing_image {
-  width: 175%;
+  width: 350%;
   height: auto;
   position: absolute;
   overflow: hidden;
 }
-.nextsession {
-  height: 150vh;
+.home-menu {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+.menu-items {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+}
+.item-wrap {
+  text-decoration: none;
+  color: $font-color;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.item-wrap:hover,
+.item-wrap:focus {
+  cursor: pointer;
+  color: $accent-color;
+}
+
+#csokorIMG,
+#koszoruIMG,
+#dekorIMG {
+  width: 50%;
+}
+@media screen and (min-width: $medium) {
+  .home-landing {
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  .menu-items {
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
+  }
+}
+@media screen and (min-width: $large) {
+  .home-landing {
+    margin-left: 7.5vh;
+    margin-right: 7.5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  .menu-items {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
 }

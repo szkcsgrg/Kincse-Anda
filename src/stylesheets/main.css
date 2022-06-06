@@ -67,6 +67,7 @@ body {
   Button Decorations
 */
 .button-wrap {
+  margin-top: 1em;
   transition: all 1s ease-in-out;
 }
 .button-wrap a {
@@ -76,6 +77,7 @@ body {
 }
 
 #button_1 {
+  cursor: pointer;
   background-color: #d1beba;
   color: #ffffff;
   padding: 0.5em;
@@ -91,6 +93,7 @@ body {
 }
 
 #button_2 {
+  cursor: pointer;
   border: 1px solid #d1beba;
   background-color: transparent;
   color: #d1beba;
@@ -118,7 +121,19 @@ body {
 }
 
 .text-wrap {
-  transition: all 1s ease-in-out;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.text-wrap h1 {
+  font-weight: bold;
+  font-size: clamp(2rem, 2.5vw, 4em);
+}
+.text-wrap h2 {
+  font-weight: bold;
+}
+.text-wrap h3 {
+  color: #000000;
+  font-weight: bold;
 }
 .text-wrap p {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
@@ -147,19 +162,6 @@ body {
 }
 
 /*
- Margins, Paddings
-*/
-.my-10 {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-}
-
-.px-10 {
-  padding-left: 10vh;
-  padding-right: 10vh;
-}
-
-/*
  Visibility Animation
 */
 .d-show {
@@ -174,6 +176,23 @@ body {
   transition: visibility 0.5s, opacity 0.5s ease-in-out;
 }
 
+/*
+  Custom Margin
+*/
+.margin-10 {
+  margin: 1.5vh;
+}
+
+@media screen and (min-width: 768px) {
+  .margin-10 {
+    margin: 5vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  .margin-10 {
+    margin: 10vh;
+  }
+}
 nav {
   height: 4em;
   position: fixed;
@@ -198,7 +217,6 @@ nav .logo {
 
 .burger {
   transition: all 0.5s ease-in-out;
-  position: relative;
   height: 3em;
   width: 3em;
   background-color: #000000;
@@ -283,21 +301,269 @@ nav .logo {
   font-size: 3.5rem;
 }
 
+footer {
+  padding-top: 1.5em;
+  margin-top: 5vh;
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+.footer-text-wrap {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  transition: all 0.3s ease-in-out;
+}
+.footer-text-wrap i {
+  width: 1em;
+  height: 1em;
+  color: #94939f;
+  opacity: 0.5;
+  margin-right: 0.5em;
+}
+.footer-text-wrap p {
+  cursor: pointer;
+  margin: 0;
+  font-size: clamp(1.15rem, 1vw, 2rem);
+}
+.footer-text-wrap span {
+  color: #94939f;
+  text-decoration: none;
+}
+.footer-text-wrap o {
+  color: #94939f;
+  opacity: 0.5;
+}
+
+.social {
+  margin-top: 1em;
+}
+.social a {
+  margin-right: 0.3em;
+  font-size: 1.5rem;
+  color: #94939f;
+}
+.social a i {
+  margin: 0;
+  padding: 0;
+}
+
+.promo {
+  transition: all 0.3s ease-in-out;
+  margin-top: 1em;
+}
+.promo p {
+  opacity: 0.5;
+}
+.promo a {
+  text-decoration: none;
+  color: #d1beba;
+}
+.promo a:hover,
+.promo a:focus {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.map {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 30vh;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  .footer-text-wrap {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer {
+    padding-top: 1.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+
+  .footer-text-wrap {
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+}
+.swiper {
+  margin-bottom: 5vh;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+}
+
+.swiper-slide {
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-wrapper {
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+}
+
+#swiperImage {
+  width: 60%;
+}
+
+#product-desc {
+  color: #94939f;
+}
+
+@media screen and (min-width: 768px) {
+  .current-products {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .swiper-wrapper {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  .current-products {
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+  }
+
+  .swiper-wrapper {
+    margin-top: 7.5vh;
+    margin-bottom: 7.5vh;
+  }
+}
+.item {
+  margin-left: 1em;
+  margin-right: 1em;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+  margin-bottom: 10vh;
+  transition: all 0.5s ease-in-out;
+}
+
+.item:hover,
+.item:focus {
+  color: #d1beba;
+}
+
+.home-landing {
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
 .landing_image_wrap {
-  top: -5vh;
-  right: 15vh;
-  min-width: 50vh;
-  min-height: 100vh;
+  top: -20vh;
+  right: -10vh;
+  width: 50vh;
+  height: 100vh;
   position: relative;
 }
 
 #landing_image {
-  width: 175%;
+  width: 350%;
   height: auto;
   position: absolute;
   overflow: hidden;
 }
 
-.nextsession {
-  height: 150vh;
+.home-menu {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.menu-items {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+}
+
+.item-wrap {
+  text-decoration: none;
+  color: #000000;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.item-wrap:hover,
+.item-wrap:focus {
+  cursor: pointer;
+  color: #d1beba;
+}
+
+#csokorIMG,
+#koszoruIMG,
+#dekorIMG {
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .home-landing {
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .menu-items {
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  .home-landing {
+    margin-left: 7.5vh;
+    margin-right: 7.5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .menu-items {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+}
+.product-landing {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+#product-desc {
+  white-space: pre-line;
+}
+
+.contact-landing {
+  min-height: 45vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+input {
+  border: 0;
+}
+
+.galeria {
+  min-height: 45vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+}
+
+.create-section {
+  margin-top: 12vh;
+  margin-bottom: 12vh;
 }

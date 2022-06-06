@@ -1,9 +1,18 @@
+//Properties
 @import "colors";
 @import "fonts";
 @import "breakpoints";
 
+//Components
 @import "root";
 @import "navbar";
-//@import "footer";
+@import "footer";
+@import "swiperView";
+@import "gridView";
 
+//Pages
 @import "home";
+@import "products";
+@import "contact";
+@import "galeria";
+@import "admin";

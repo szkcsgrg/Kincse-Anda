@@ -1,0 +1,90 @@
+footer {
+  padding-top: 1.5em;
+  margin-top: 5vh;
+  background-color: $footer-color;
+  color: $main-color;
+}
+.footer-text-wrap {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  transition: all 0.3s ease-in-out;
+  i {
+    width: 1em;
+    height: 1em;
+    color: $secondary-color;
+    opacity: 0.5;
+    margin-right: 0.5em;
+  }
+  p {
+    cursor: pointer;
+    margin: 0;
+    font-size: clamp(1.15rem, 1vw, 2rem);
+  }
+  span {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+  o {
+    color: $secondary-color;
+    opacity: 0.5;
+  }
+}
+.social {
+  margin-top: 1em;
+  a {
+    margin-right: 0.3em;
+    font-size: 1.5rem;
+    color: $secondary-color;
+  }
+  a i {
+    margin: 0;
+    padding: 0;
+  }
+}
+.promo {
+  transition: all 0.3s ease-in-out;
+  margin-top: 1em;
+  p {
+    opacity: 0.5;
+  }
+  a {
+    text-decoration: none;
+    color: $accent-color;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    opacity: 1;
+  }
+}
+.map {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 30vh;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+}
+@media screen and (min-width: $medium) {
+  footer {
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .footer-text-wrap {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+@media screen and (min-width: $large) {
+  footer {
+    padding-top: 1.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+  .footer-text-wrap {
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+}

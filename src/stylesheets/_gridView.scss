@@ -1,0 +1,13 @@
+.item {
+  margin-left: 1em;
+  margin-right: 1em;
+  text-decoration: none;
+  color: $font-color;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+  margin-bottom: 10vh;
+  transition: all 0.5s ease-in-out;
+}
+.item:hover,
+.item:focus {
+  color: $accent-color;
+}
