@@ -47,7 +47,9 @@
     <?php include_once "components/nav.php" ?>
     <!-- Navigation End -->
 
-    <main class="container-fluid">
+    <div id="cursor" class="cursor d-none d-lg-block"></div>
+
+    <main class="container-fluid" role="main">
 
         <!-- Landing Start -->
         <section class="row home-landing d-flex justify-content-start align-items-center flex-row">
@@ -105,7 +107,7 @@
         <!-- Menu End -->
 
         <!-- Current Products Start -->
-        <section class="current-products row align-items-center">
+        <section class="current-products row align-items-center" id='swiper'>
             <div class="text-wrap text-center my-2">
                 <h1>Aktuális Termékek</h1>
             </div>
@@ -132,6 +134,8 @@
 <script src="scripts/navbarLogo.js"></script>
 <script src="scripts/swiper.js"></script>
 <script src='scripts/shorter.js'></script>
+<script src="scripts/cursor.js"></script>
+<script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->
 
 </html>

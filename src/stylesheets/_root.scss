@@ -24,6 +24,43 @@ body {
 }
 
 /*
+  Custom Cursor 
+*/
+.cursor {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: $accent-color;
+  border: 0.15em solid $accent-color;
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  z-index: 1090;
+  pointer-events: none;
+}
+.drag {
+  width: 3.5em;
+  height: 3.5em;
+  z-index: 1090;
+  color: $main-color;
+}
+.drag::after {
+  content: "Húzza";
+  position: absolute;
+  top: 0.8em;
+  left: 0.2em;
+}
+.bttn {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+}
+.links {
+  transform: scale(6);
+  mix-blend-mode: difference;
+}
+
+/*
   Button Decorations
 */
 .button-wrap {

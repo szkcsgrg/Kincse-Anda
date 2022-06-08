@@ -1,6 +1,4 @@
 .item {
-  margin-left: 1em;
-  margin-right: 1em;
   text-decoration: none;
   color: $font-color;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
@@ -10,4 +8,12 @@
 .item:hover,
 .item:focus {
   color: $accent-color;
+}
+@media screen and (min-width: $medium) {
+  .item {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+@media screen and (min-width: $large) {
 }

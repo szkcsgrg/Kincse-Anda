@@ -37,7 +37,9 @@
     <?php include_once "components/nav.php" ?>
     <!-- Navigation End -->
 
-    <main class="container-fluid">
+    <div id="cursor" class="cursor d-none d-lg-block"></div>
+
+    <main class="container-fluid" role="main">
 
         <!-- Create Start -->
         <section class="row create-section align-items-start">
@@ -91,7 +93,7 @@
                     <input name="ar" placeholder="Ár:" class="form-control required my-1" type="text" required>
                     <input type="file" name="image" class="form-control required my-1">
                     <input name="aktualis" type="checkbox" id="aktualis">
-                    <label for="aktualis">Aktuális termék</label>
+                    <label for=" aktualis">Aktuális termék</label>
                     <div class="button-wrap">
                         <input type="button" name="save" value="Mentés" id="button_1">
                     </div>
@@ -113,6 +115,8 @@
 <!-- Scripts Start -->
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/navbarMenu.js"></script>
+<script src="scripts/cursor.js"></script>
+<script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->
 
 </html>

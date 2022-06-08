@@ -1,18 +1,19 @@
-function copy(link){
-   navigator.clipboard.writeText(link).then(() => {
-       alert("Másolva a vágólapra.", "light");
-     })
-}
+let data;
 const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
 const alert = (message, type) => {
   const wrapper = document.createElement('div')
   wrapper.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    //'   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    `   <div>${data+' '+message}</div>`,
     '</div>'
   ].join('')
 
   alertPlaceholder.append(wrapper)
+}
+function copy(link){
+   navigator.clipboard.writeText(link).then(() => {
+      data = link;
+       alert("Másolva a vágólapra.", "light"); 
+     })
 }

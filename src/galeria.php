@@ -28,7 +28,9 @@
     <?php include_once "components/nav.php" ?>
     <!-- Navigation End -->
 
-    <main class="container-fluid">
+    <div id="cursor" class="cursor d-none d-lg-block"></div>
+
+    <main class="container-fluid" role="main">
         <section class="row galeria d-flex align-items-center text-center text-wrap">
             <div class="col-12 col-md-6 d-flex flex-column align-items-center my-3">
                 <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
@@ -55,6 +57,8 @@
 <!-- Scripts Start -->
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/navbarMenu.js"></script>
+<script src="scripts/cursor.js"></script>
+<script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->
 
 </html>

@@ -23,10 +23,10 @@
                 </div>
                 ";
         }
-
         ?>
     </div>
 </div>
+
 
 <div class='modal fade' id='Modal' tabindex='-1' aria-hidden='true'>
     <div class='modal-dialog modal-fullscreen'>

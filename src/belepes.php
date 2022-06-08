@@ -25,14 +25,19 @@
     <!-- Navigation Start -->
     <?php include_once "components/nav.php" ?>
     <!-- Navigation End -->
-    <main class="container-fluid">
+
+    <div id="cursor" class="cursor d-none d-lg-block"></div>
+
+    <main class="container-fluid" role="main">
         <section class="row contact-landing d-flex flex-column align-items-center text-center text-wrap">
             <h1 class="my-5">Belépés</h1>
 
             <form method="POST" action="components/login.inc.php" class="col-8 col-md-6 col-lg-4">
                 <input name="email" placeholder="Email" class="form-control required my-1" type="email" required>
                 <input name="password" placeholder="Jelszó" class="form-control required my-1" type="password" required>
-                <input type="submit" name="submit" value="Belépés" id="button_1" class="my-3">
+                <div class="button-wrap">
+                    <input type="submit" name="submit" value="Belépés" id="button_1" class="my-3">
+                </div>
             </form>
         </section>
     </main>
@@ -40,6 +45,9 @@
 
 <!-- Scripts Start -->
 <script src="scripts/jquery.min.js"></script>
+<script src="scripts/navbarMenu.js"></script>
+<script src="scripts/cursor.js"></script>
+<script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->
 
 </html>

@@ -46,7 +46,9 @@
     <?php include_once "components/nav.php" ?>
     <!-- Navigation End -->
 
-    <main class="container-fluid">
+    <div id="cursor" class="cursor d-none d-lg-block"></div>
+
+    <main class="container-fluid" role="main">
         <section class="row product-landing d-flex justify-content-center align-items-center flex-row">
             <div class="col-10 col-md-6 col-lg-6 d-flex flex-column flex-md-row text-center">
                 <select class="form-control my-2 mx-2">
@@ -65,7 +67,7 @@
         </section>
 
 
-        <scetion class="collectionView">
+        <scetion class="collectionView" id='swiper'>
             <?php
             include_once "components/db.php";
             $result = $conn->query("Select * From testtable");
@@ -95,6 +97,8 @@
 <script src="scripts/swiper.js"></script>
 <script src="scripts/view.js"></script>
 <script src='scripts/shorter.js'></script>
+<script src="scripts/cursor.js"></script>
+<script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->
 
 </html>
