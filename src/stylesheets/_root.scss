@@ -53,11 +53,15 @@ body {
 .bttn {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  transition: visibility 0.1s, opacity 0.1s ease-in-out;
 }
 .links {
   transform: scale(6);
   mix-blend-mode: difference;
+}
+.wt {
+  background-color: $main-color;
+  border: none;
 }
 
 /*
@@ -67,15 +71,15 @@ body {
   margin-top: 1em;
   transition: all 1s ease-in-out;
   a {
-    color: $accent-color;
+    color: $main-color;
     font-size: clamp(1rem, 2vw, 1.3rem);
     text-decoration: none;
   }
 }
 #button_1 {
   cursor: pointer;
-  background-color: $accent-color;
   color: $main-color;
+  background-color: $accent-color;
   padding: 0.5em;
   transition: all 0.5s ease-in-out;
 }
@@ -86,7 +90,8 @@ body {
   border: 1px solid $accent-color;
   transition: all 0.5s ease-in-out;
 }
-#button_2 {
+#button_2,
+.button_propd {
   cursor: pointer;
   border: 1px solid $accent-color;
   background-color: transparent;
@@ -95,7 +100,9 @@ body {
   transition: all 0.5s ease-in-out;
 }
 #button_2:hover,
-#button_2:focus {
+#button_2:focus,
+.button_propd:hover,
+.button_propd:focus {
   background-color: $accent-color;
   color: $main-color;
   transition: all 0.5s ease-in-out;

@@ -67,8 +67,19 @@
                 </div>
                 <div class="text-wrap my-3">
                     <?php
-                    $openH = "Nyitvatartás: Ma, Holnap";
-                    echo "<p class='bold'>$openH</p>";
+                    include_once "components/db.php";
+                    $today = date("Y-m-d");
+                    $openH = $conn->query("SELECT * FROM openhour ORDER BY id desc LIMIT 1");
+                    while ($row = $openH->fetch_assoc()) {
+                        // echo $today . '</br>';
+                        // echo $row["deleteDate"];
+                        if ($today < $row['deleteDate']) {
+                            echo "<p class='bold'>" . $row["text"] . "</p>";
+                        }
+                        if (!isset($row['deleteDate'])) {
+                            echo "<p class='bold'>" . $row["text"] . "</p>";
+                        }
+                    }
                     ?>
                 </div>
             </div>
@@ -81,19 +92,19 @@
         <!-- Menu Start -->
         <section class="home-menu row d-flex justify-content-center align-items-center">
             <div class="menu-items col-10 col-lg-9 d-flex flex-column flex-md-row">
-                <a href="termekek.php?category=csokor" class="col-12 col-md-4 item-wrap text-center px-4">
+                <a href="termekek.php" class="col-12 col-md-4 item-wrap text-center px-4">
                     <img id="csokorIMG" src="images/home/menu/csokor.png" alt="Menu Image">
                     <h3>Csokor</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil assumenda architecto et placeat
                         velit suscipit?</p>
                 </a>
-                <a href="termekek.php?category=koszoru" class="col-12 col-md-4 item-wrap text-center px-4">
+                <a href="termekek.php" class="col-12 col-md-4 item-wrap text-center px-4">
                     <img id="koszoruIMG" src="images/home/menu/koszoru.png" alt="Menu Image">
                     <h3>Koszorú</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil assumenda architecto etplaceat
                         velit suscipit?</p>
                 </a>
-                <a href="termekek.php?category=dekor" class="col-12 col-md-4 item-wrap text-center px-4">
+                <a href="termekek.php" class="col-12 col-md-4 item-wrap text-center px-4">
                     <img id="dekorIMG" src="images/home/menu/dekor.png" alt="Menu Image">
                     <h3>Dekor</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil assumenda architecto et placeat
@@ -101,7 +112,7 @@
                 </a>
             </div>
             <div class="text-center text-wrap my-3">
-                <p>Egyéb munkáimat a <a href="galeria.php">Galériában</a> megtalálhatja.</p>
+                <p>Egyéb munkáimat a <a class="link" href="galeria.php">Galériában</a> megtalálhatja.</p>
             </div>
         </section>
         <!-- Menu End -->
@@ -111,11 +122,41 @@
             <div class="text-wrap text-center my-2">
                 <h1>Aktuális Termékek</h1>
             </div>
-            <?php
-            include_once "components/db.php";
-            $result = $conn->query("Select * FROM testtable");
-            include_once "components/swiperView.php";
-            ?>
+            <div class='swiper col-10'>
+                <div class='swiper-wrapper'>
+                    <?php
+                    include_once "components/db.php";
+                    $result = $conn->query("SELECT * FROM products WHERE current_e like 1");
+                    while ($row = $result->fetch_assoc()) {
+                        echo "
+                    <div class='swiper-slide d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row flex-column' data-swiper-autoplay='15000' pauseOnMouseEnter='true'>
+                        <div class='col-10 col-lg-5 text-wrap flex-column align-items-center'>
+                            <div class='accent'>
+                                <h3>" . $row['name'] . "</h3>
+                                <span>Azonosító: " . $row['id'] . "</span>
+                                <p id='product-desc'>" . $row['description'] . "</p>
+                            </div>
+                            <div>
+                                <h3>" . $row['price'] . "</h3>
+                                <div class='button-wrap'>
+                                        <a data-bs-toggle='modal' data-bs-target='#Modal' class='button_propd' id='" . $row['id'] . "'>Bővebben</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class='col-10 col-lg-6 text-center'>
+                            <img id='swiperImage' src='" . $row['image'] . "' alt='Image of the Product'>
+                        </div>
+                    </div>
+                    ";
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class='modal fade' id='Modal' tabindex='-1' aria-hidden='true'>
+                <?php
+                include_once "components/modal.php";
+                ?>
+            </div>
         </section>
         <!-- Current Products End -->
 
@@ -134,6 +175,8 @@
 <script src="scripts/navbarLogo.js"></script>
 <script src="scripts/swiper.js"></script>
 <script src='scripts/shorter.js'></script>
+<script src="scripts/productsChange.js"></script>
+<script src="scripts/modalHandle.js"></script>
 <script src="scripts/cursor.js"></script>
 <script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->

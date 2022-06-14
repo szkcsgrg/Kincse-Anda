@@ -97,12 +97,17 @@ body {
 .bttn {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  transition: visibility 0.1s, opacity 0.1s ease-in-out;
 }
 
 .links {
   transform: scale(6);
   mix-blend-mode: difference;
+}
+
+.wt {
+  background-color: #ffffff;
+  border: none;
 }
 
 /*
@@ -113,15 +118,15 @@ body {
   transition: all 1s ease-in-out;
 }
 .button-wrap a {
-  color: #d1beba;
+  color: #ffffff;
   font-size: clamp(1rem, 2vw, 1.3rem);
   text-decoration: none;
 }
 
 #button_1 {
   cursor: pointer;
-  background-color: #d1beba;
   color: #ffffff;
+  background-color: #d1beba;
   padding: 0.5em;
   transition: all 0.5s ease-in-out;
 }
@@ -134,7 +139,8 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-#button_2 {
+#button_2,
+.button_propd {
   cursor: pointer;
   border: 1px solid #d1beba;
   background-color: transparent;
@@ -144,7 +150,9 @@ body {
 }
 
 #button_2:hover,
-#button_2:focus {
+#button_2:focus,
+.button_propd:hover,
+.button_propd:focus {
   background-color: #d1beba;
   color: #ffffff;
   transition: all 0.5s ease-in-out;
@@ -397,6 +405,7 @@ footer {
 }
 .promo p {
   opacity: 0.5;
+  color: #94939f;
 }
 .promo a {
   text-decoration: none;
@@ -405,7 +414,6 @@ footer {
 .promo a:hover,
 .promo a:focus {
   text-decoration: underline;
-  opacity: 1;
 }
 
 .map {
@@ -452,14 +460,20 @@ footer {
 .swiper-slide {
   margin: 0;
   padding: 0;
+  min-height: 50vh;
 }
 
 .swiper-wrapper {
   margin-top: 2.5vh;
   margin-bottom: 2.5vh;
+  min-height: 50vh;
 }
 
 #swiperImage {
+  width: 60%;
+}
+
+.swiperImage {
   width: 60%;
 }
 
@@ -490,20 +504,31 @@ footer {
   }
 }
 .item {
+  max-height: 50vh;
+  min-height: 35vh;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
   text-decoration: none;
   color: #000000;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
   margin-bottom: 10vh;
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 
 .item:hover,
 .item:focus {
-  color: #d1beba;
+  background-color: #d1beba;
+  color: #ffffff;
+}
+
+.item h3:nth-child(3) {
+  padding: 0.5em;
 }
 
 @media screen and (min-width: 768px) {
   .item {
+    padding: 0;
     margin-left: 0.5em;
     margin-right: 0.5em;
   }
@@ -620,4 +645,48 @@ input {
 .create-section {
   margin-top: 12vh;
   margin-bottom: 12vh;
+}
+
+.galery-edit {
+  margin-top: 12vh;
+  margin-bottom: 12vh;
+}
+
+.galery-item {
+  position: relative;
+}
+
+#pen,
+#bin {
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 1em;
+  text-align: center;
+  padding: 0.5em;
+  top: -1.25em;
+}
+
+#pen {
+  right: 6em;
+  background: #ffffff;
+  border: 2px solid #d1beba;
+}
+
+#bin {
+  background: #ffffff;
+  border: 2px solid #d1beba;
+  right: 3.5em;
+}
+
+#pen2,
+#bin2 {
+  position: static;
+  background: #ffffff;
+  border: 2px solid #d1beba;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.5em;
+  border-radius: 1em;
+  text-align: center;
 }

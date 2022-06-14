@@ -33,10 +33,10 @@
             <h1 class="my-5">Belépés</h1>
 
             <form method="POST" action="components/login.inc.php" class="col-8 col-md-6 col-lg-4">
-                <input name="email" placeholder="Email" class="form-control required my-1" type="email" required>
+                <input name="azonosito" placeholder="Azonosító" class="form-control required my-1" type="text" required>
                 <input name="password" placeholder="Jelszó" class="form-control required my-1" type="password" required>
                 <div class="button-wrap">
-                    <input type="submit" name="submit" value="Belépés" id="button_1" class="my-3">
+                    <input type="submit" name="submit" value="Belépés" id="button_1">
                 </div>
             </form>
         </section>

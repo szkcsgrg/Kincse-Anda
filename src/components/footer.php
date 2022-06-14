@@ -29,7 +29,8 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="col-12 text-center promo">
-        <p>Designed and Developed by <a target="_blank" href="https://szakacsgergo.com/">Szakács Gergő</a>.</p>
+        <p>Designed and Developed by <a class="link" target="_blank" href="https://szakacsgergo.com/">Szakács Gergő</a>.
+        </p>
     </div>
     <script src="scripts/copy.js"></script>
     <script>

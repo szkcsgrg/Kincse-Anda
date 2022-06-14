@@ -16,6 +16,9 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
+    <!-- Swiper Js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="stylesheets/main.css">
@@ -24,6 +27,7 @@
 <body>
 
     <?php
+    include_once "components/db.php";
     /*
         if(Session is null){
             Location belepes.php
@@ -42,12 +46,18 @@
     <main class="container-fluid" role="main">
 
         <!-- Create Start -->
-        <section class="row create-section align-items-start">
+        <section id="create" class="row create-section align-items-start">
             <div
                 class="col-12 col-md-6 col-lg-4 align-items-center d-flex flex-column justify-content-center text-center my-5">
                 <div class="text-wrap">
                     <h3>Nyitvatartás Megjelenítése</h3>
-                    <span>Select From Database Current</span>
+                    <?php
+                    include_once "components/db.php";
+                    $openH = $conn->query("SELECT * FROM openhour ORDER BY id desc LIMIT 1");
+                    while ($row = $openH->fetch_assoc()) {
+                        echo "<span>" . $row["text"] . "</span>";
+                    }
+                    ?>
                 </div>
 
                 <form action="components/create-openhour.inc.php" method="POST" class="col-8">
@@ -103,11 +113,128 @@
         <!-- Create End -->
 
         <!-- Galeria Edit Start -->
+        <section id="galery" class="row galery-edit align-items-start">
+            <div class="col-12 align-items-center d-flex flex-column justify-content-center text-center my-5">
+                <div class="text-wrap my-4">
+                    <h3>Galéria Szerkesztése</h3>
+                </div>
+                <div class="row d-flex flex-row justify-content-evenly text-wrap">
+
+                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
+                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
+                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-pencil-fill' id='pen'></i>
+                        </a>
+                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-trash-fill' id='bin'></i>
+                        </a>
+                    </div>
+                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
+                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
+                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-pencil-fill' id='pen'></i>
+                        </a>
+                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-trash-fill' id='bin'></i>
+                        </a>
+                    </div>
+                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
+                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
+                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-pencil-fill' id='pen'></i>
+                        </a>
+                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-trash-fill' id='bin'></i>
+                        </a>
+                    </div>
+                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
+                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
+                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-pencil-fill' id='pen'></i>
+                        </a>
+                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-trash-fill' id='bin'></i>
+                        </a>
+                    </div>
+                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
+                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
+                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-pencil-fill' id='pen'></i>
+                        </a>
+                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-trash-fill' id='bin'></i>
+                        </a>
+                    </div>
+                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
+                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
+                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-pencil-fill' id='pen'></i>
+                        </a>
+                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
+                            <i class='bi bi-trash-fill' id='bin'></i>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
         <!-- Galeria Edit End -->
 
         <!-- Termekek Edit Start -->
-        <!-- Termekek Edit End -->
-
+        <scetion id="products" class="collectionView align-items-center" id='swiper'>
+            <div class="col-12 align-items-center d-flex flex-column justify-content-center my-5">
+                <div class="text-wrap my-4 text-center">
+                    <h3>Termékek Szerkesztése</h3>
+                    <select class="form-control my-2 mx-2">
+                        <option value="">Csokor</option>
+                        <option value="">Koszorú</option>
+                        <option value="">Dekor</option>
+                    </select>
+                </div>
+                <div class='swiper col-10'>
+                    <div class='swiper-wrapper'>
+                        <?php
+                        $result = $conn->query("Select * FROM testtable");
+                        while ($row = $result->fetch_assoc()) {
+                            echo "
+                            <div class='swiper-slide d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row flex-column' data-swiper-autoplay='15000' pauseOnMouseEnter='true'>
+                                <div class='col-10 col-lg-5 text-wrap flex-column align-items-center'>
+                                    <div class='accent'>
+                                        <h3>Termék neve</h3>
+                                        <a href='termekek.php?category='><span>Termék típusa</span></a>
+                                        <p id='product-desc'>" . $row['Column 2'] . "</p>
+                                    </div>
+                                    <div>
+                                        <h3>3000-5000Ft</h3>
+                                        <div class='button-wrap'>  
+                                            <a href='../Values/update.php?id='' '>
+                                            <i class='bi bi-pencil-fill' id='pen2'></i>
+                                            </a>
+                                            <a href='../Values/remove.php?id='' '>
+                                            <i class='bi bi-trash-fill' id='bin2'></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-10 col-lg-6 text-center'>
+                                    <img id='swiperImage' src='images/d.jpg' alt='Image of the Product'>
+                                </div>
+                            </div>
+                            ";
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <!-- Termekek Edit End -->
+        </scetion>
     </main>
 
 </body>
@@ -115,6 +242,8 @@
 <!-- Scripts Start -->
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/navbarMenu.js"></script>
+<script src="scripts/swiper.js"></script>
+<script src='scripts/shorter.js'></script>
 <script src="scripts/cursor.js"></script>
 <script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->

@@ -1,4 +1,4 @@
-$(function() {
+$(function navbarLogo() {
     var landing = $('.home-landing').height()-250;
     $('.logo').toggleClass('d-not');
     $(window).scroll(function () {

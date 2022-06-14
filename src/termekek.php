@@ -51,14 +51,15 @@
     <main class="container-fluid" role="main">
         <section class="row product-landing d-flex justify-content-center align-items-center flex-row">
             <div class="col-10 col-md-6 col-lg-6 d-flex flex-column flex-md-row text-center">
-                <select class="form-control my-2 mx-2">
-                    <option value="">Csokor</option>
-                    <option value="">Koszorú</option>
-                    <option value="">Dekor</option>
+                <select id="myDropDown" name="categorySelect" class="form-control my-2 mx-md-2">
+                    <option value='Összes'>Összes</option>
+                    <option value="Csokor">Csokor</option>
+                    <option value="Koszorú">Koszorú</option>
+                    <option value="Dekor">Dekor</option>
                 </select>
                 <input placeholder="Termék neve" type="text" name="filter" id="filter"
-                    class="d-none filter form-control my-2 mx-2">
-                <button id="chnageView" onclick="changeView()" class="form-control my-2 mx-2">
+                    class="d-none filter form-control my-2 mx-md-2">
+                <button id="chnageView" onclick="changeView()" class="form-control my-2 mx-md-2">
                     <i class="bi bi-grid" title="Felosztott Nézet" data-bs-toggle="tooltip" data-bs-placement="top"></i>
                     <i class="bi bi-collection d-none" title="Csoportosított Nézet" data-bs-toggle="tooltip"
                         data-bs-placement="top"></i>
@@ -67,21 +68,22 @@
         </section>
 
 
-        <scetion class="collectionView" id='swiper'>
+        <section class="collectionView" id='swiper'>
             <?php
-            include_once "components/db.php";
-            $result = $conn->query("Select * From testtable");
-            include_once "components/swiperView.php";
+            include_once "components/sort.php";
             ?>
-        </scetion>
+        </section>
 
-        <section class="gridView d-none">
+        <section class="gridView d-none" id="grid">
             <?php
-            include_once "components/db.php";
-            $result = $conn->query("Select * From testtable");
             include_once "components/gridView.php";
             ?>
         </section>
+        <div class='modal fade' id='Modal' tabindex='-1' aria-hidden='true'>
+            <?php
+            include_once "components/modal.php";
+            ?>
+        </div>
     </main>
 
     <!-- Footer Start -->
@@ -94,9 +96,11 @@
 <!-- Scripts Start -->
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/navbarMenu.js"></script>
-<script src="scripts/swiper.js"></script>
 <script src="scripts/view.js"></script>
+<script src='scripts/swiper.js'></script>
 <script src='scripts/shorter.js'></script>
+<script src="scripts/productsChange.js"></script>
+<script src="scripts/modalHandle.js"></script>
 <script src="scripts/cursor.js"></script>
 <script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->

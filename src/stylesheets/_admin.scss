@@ -2,6 +2,46 @@
   margin-top: 12vh;
   margin-bottom: 12vh;
 }
+.galery-edit {
+  margin-top: 12vh;
+  margin-bottom: 12vh;
+}
+.galery-item {
+  position: relative;
+}
+#pen,
+#bin {
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 1em;
+  text-align: center;
+  padding: 0.5em;
+  top: -1.25em;
+}
+#pen {
+  right: 6em;
+  background: $main-color;
+  border: 2px solid $accent-color;
+}
+#bin {
+  background: $main-color;
+  border: 2px solid $accent-color;
+  right: 3.5em;
+}
+
+#pen2,
+#bin2 {
+  position: static;
+  background: $main-color;
+  border: 2px solid $accent-color;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.5em;
+  border-radius: 1em;
+  text-align: center;
+}
+
 @media screen and (min-width: $medium) {
 }
 @media screen and (min-width: $large) {

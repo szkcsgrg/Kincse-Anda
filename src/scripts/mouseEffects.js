@@ -1,40 +1,57 @@
 /* 
     Swipers Mouse Events
 */
-$("#swiper").mouseenter( () =>{
+$("#swiper").on('mouseenter', () =>{
     $("#cursor").addClass("drag");
 })
-$("#swiper").mouseleave( () =>{
+$("#swiper").on('mouseleave', () =>{
     $("#cursor").removeClass("drag");
 })
+$(".modal").on('mouseenter', () =>{
+    $("#cursor").removeClass("drag");
+})
+
+
 
 /* 
     Buttons Mouse Events
 */
-$(".button-wrap").mouseenter( () =>{
+$(".button-wrap").on('mouseenter', () =>{
     $("#cursor").addClass("bttn");
 })
-$(".button-wrap").mouseleave( () =>{
+$(".button-wrap").on('mouseleave', () =>{
     $("#cursor").removeClass("bttn");
 })
 
 /* 
     Links Mouse Events
 */
-$("li a").mouseenter( () =>{
+$("li a").on('mouseenter', () =>{
     $("#cursor").addClass("links");
 })
-$("li a").mouseleave( () =>{
+$("li a").on('mouseleave', () =>{
     $("#cursor").removeClass("links");
+})
+$(".link").on('mouseenter', () =>{
+    $("#cursor").addClass("bttn");
+})
+$(".link").on('mouseleave', () =>{
+    $("#cursor").removeClass("bttn");
+})
+$(".item").on('mouseenter', () =>{
+    $("#cursor").addClass("wt");
+})
+$(".item").on('mouseleave', () =>{
+    $("#cursor").removeClass("wt");
 })
 
 /* 
     Burger Mouse Events
 */
-$(".burger").mouseenter( () =>{
+$(".burger").on('mouseenter', () =>{
     $("#cursor").addClass("bttn");
 })
-$(".burger").mouseleave( () =>{
+$(".burger").on('mouseleave', () =>{
     $("#cursor").removeClass("bttn");
 })
 
