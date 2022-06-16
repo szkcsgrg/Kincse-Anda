@@ -1,8 +1,8 @@
 .swiper {
-  //margin-top: 5vh;
   margin-bottom: 5vh;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
   user-select: none;
+  background-color: $main-color;
 }
 .swiper-slide {
   margin: 0;
@@ -23,6 +23,16 @@
 }
 #product-desc {
   color: $secondary-color;
+  //white-space: pre-line;
+
+  // overflow: hidden;
+  // white-space: nowrap;
+  // text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media screen and (min-width: $medium) {

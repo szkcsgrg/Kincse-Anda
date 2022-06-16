@@ -26,7 +26,8 @@
                                 <div>
                                     <h4>" . $row['price'] . "</h4>
                                     <div class='button-wrap'>
-                                        <a data-bs-toggle='modal' data-bs-target='#Modal' class='button_propd' id='" . $row['id'] . "'>Bővebben</a>
+                                        <a href='components/edit-product.inc.php?id=" . $row['id'] . "' '><i class='bi bi-pencil-fill' id='pen'></i></a>
+                                        <a href='components/delete-product.inc.php?id=" . $row['id'] . "' '><i class='bi bi-trash-fill' id='bin'></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +51,8 @@
                                 <div>
                                     <h4>" . $row['price'] . "</h4>
                                     <div class='button-wrap'>
-                                        <a data-bs-toggle='modal' data-bs-target='#Modal' class='button_propd' id='" . $row['id'] . "'>Bővebben</a>
+                                        <a href='components/edit-product.inc.php?id=" . $row['id'] . "' '><i class='bi bi-pencil-fill' id='pen'></i></a>
+                                        <a href='components/delete-product.inc.php?id=" . $row['id'] . "' '><i class='bi bi-trash-fill' id='bin'></i></a>
                                     </div>
                                 </div>
                             </div>

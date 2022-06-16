@@ -3,25 +3,30 @@
   margin-right: 2vh;
   margin-top: 10vh;
   margin-bottom: 10vh;
+  min-height: 80vh;
 }
 .landing_image_wrap {
-  top: -20vh;
-  right: -10vh;
-  width: 50vh;
-  height: 100vh;
   position: relative;
+  top: -12em;
+  right: -20em;
 }
-#landing_image {
-  width: 350%;
-  height: auto;
+
+#wave {
   position: absolute;
-  overflow: hidden;
+  width: 100vw;
+}
+#wave2 {
+  transform: scaleX(-1);
+  position: absolute;
+  width: 100vw;
 }
 .home-menu {
+  position: relative;
   margin-top: 10vh;
   margin-bottom: 10vh;
 }
 .menu-items {
+  background-color: $main-color;
   padding-top: 5vh;
   padding-bottom: 5vh;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);

@@ -48,7 +48,11 @@
 
     <div id="cursor" class="cursor d-none d-lg-block"></div>
 
+    <a href="#" id="gototop" class="gototop d-show text-center d-flex justify-content-center align-items-center"><i
+            class="bi bi-arrow-up"></i></a>
+
     <main class="container-fluid" role="main">
+        <img id="wave2" src="images/home/wave.png" alt="Design Element">
         <section class="row product-landing d-flex justify-content-center align-items-center flex-row">
             <div class="col-10 col-md-6 col-lg-6 d-flex flex-column flex-md-row text-center">
                 <select id="myDropDown" name="categorySelect" class="form-control my-2 mx-md-2">
@@ -98,7 +102,6 @@
 <script src="scripts/navbarMenu.js"></script>
 <script src="scripts/view.js"></script>
 <script src='scripts/swiper.js'></script>
-<script src='scripts/shorter.js'></script>
 <script src="scripts/productsChange.js"></script>
 <script src="scripts/modalHandle.js"></script>
 <script src="scripts/cursor.js"></script>

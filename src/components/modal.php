@@ -14,7 +14,7 @@ echo "
                 <div class='accent margin-10'>
                     <h3>" . $row['name'] . "</h3>
                     <span>Azonosító: " . $row['id'] . "</span>
-                    <p id='product-desc'>" . $row['description'] . "</p>
+                    <p id='prod-desc'>" . $row['description'] . "</p>
 
                     <h3>" . $row['price'] . "</h3>
                 

@@ -10,7 +10,7 @@
                     title="Kattintson a másoláshoz" data-bs-toggle="tooltip"
                     data-bs-placement="right">anda.901029@windowslive.com</span>
             </p>
-            <div class="col-6 my-1" id="liveAlertPlaceholder"></div>
+            <div class="col-10 col-lg-8 my-1" id="liveAlertPlaceholder"></div>
             <br>
             <o>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam et necessitatibus facere,

@@ -24,6 +24,33 @@ body {
 }
 
 /*
+  Go To Top Button
+*/
+.gototop {
+  transition: all 0.5s ease-in-out;
+  height: 3em;
+  width: 3em;
+  background-color: $font-color;
+  color: $main-color;
+  border-radius: 50%;
+  z-index: 1030;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+.gototop:hover {
+  transition: all 0.5s ease-in-out;
+  height: 5em;
+  width: 5em;
+  background-color: $accent-color;
+}
+.bi-arrow-up {
+  color: $main-color;
+  font-size: 1.6rem;
+}
+
+/*
   Custom Cursor 
 */
 .cursor {
@@ -59,9 +86,21 @@ body {
   transform: scale(6);
   mix-blend-mode: difference;
 }
+.logoh {
+  transform: scale(10);
+  mix-blend-mode: hard-light;
+}
+.logot {
+  transform: scale(8);
+  mix-blend-mode: multiply;
+}
 .wt {
   background-color: $main-color;
-  border: none;
+  border: solid 2px $accent-color;
+}
+.zoom {
+  transform: scale(12);
+  mix-blend-mode: hard-light;
 }
 
 /*
@@ -81,10 +120,13 @@ body {
   color: $main-color;
   background-color: $accent-color;
   padding: 0.5em;
+  border: 1px solid $accent-color;
   transition: all 0.5s ease-in-out;
 }
 #button_1:hover,
 #button_1:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em $accent-color;
+  transform: translateY(-0.25em);
   background-color: transparent;
   color: $accent-color;
   border: 1px solid $accent-color;
@@ -103,6 +145,9 @@ body {
 #button_2:focus,
 .button_propd:hover,
 .button_propd:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em $accent-color;
+  transform: translateY(-0.25em);
+  border: 1px solid $accent-color;
   background-color: $accent-color;
   color: $main-color;
   transition: all 0.5s ease-in-out;
@@ -174,7 +219,6 @@ body {
   opacity: 0;
   transition: visibility 0.5s, opacity 0.5s ease-in-out;
 }
-
 /*
   Custom Margin
 */
@@ -186,9 +230,17 @@ body {
   .margin-10 {
     margin: 5vh;
   }
+  .gototop {
+    right: 1em;
+    bottom: 1em;
+  }
 }
 @media screen and (min-width: $large) {
   .margin-10 {
     margin: 10vh;
+  }
+  .gototop {
+    right: 1.5em;
+    bottom: 1.5em;
   }
 }

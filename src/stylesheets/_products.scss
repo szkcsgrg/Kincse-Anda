@@ -1,8 +1,9 @@
 .product-landing {
+  position: relative;
   margin-top: 10vh;
   margin-bottom: 5vh;
   user-select: none;
 }
-#product-desc {
-  white-space: pre-line;
+#prod-desc {
+  color: $secondary-color;
 }

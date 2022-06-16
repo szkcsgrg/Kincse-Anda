@@ -12,7 +12,6 @@ $(".modal").on('mouseenter', () =>{
 })
 
 
-
 /* 
     Buttons Mouse Events
 */
@@ -54,4 +53,44 @@ $(".burger").on('mouseenter', () =>{
 $(".burger").on('mouseleave', () =>{
     $("#cursor").removeClass("bttn");
 })
+$(".gototop").on('mouseenter', () =>{
+    $("#cursor").addClass("bttn");
+})
+$(".gototop").on('mouseleave', () =>{
+    $("#cursor").removeClass("bttn");
+})
 
+
+/*
+    Design elements Mouse Events
+*/
+$("#landing_image_logo").on('mouseenter', () =>{
+    $("#cursor").addClass("logoh");
+})
+$("#landing_image_logo").on('mouseleave', () =>{
+    $("#cursor").removeClass("logoh");
+})
+$("#wave").on('mouseenter', () =>{
+    $("#cursor").addClass("wt");
+})
+$("#wave").on('mouseleave', () =>{
+    $("#cursor").removeClass("wt");
+})
+$("#wave2").on('mouseenter', () =>{
+    $("#cursor").addClass("wt");
+})
+$("#wave2").on('mouseleave', () =>{
+    $("#cursor").removeClass("wt");
+})
+$("#logo").on('mouseenter', () =>{
+    $("#cursor").addClass("logot");
+})
+$("#logo").on('mouseleave', () =>{
+    $("#cursor").removeClass("logot");
+})
+$(".galery-image").on('mouseenter', () =>{
+    $("#cursor").addClass("zoom");
+})
+$(".galery-image").on('mouseleave', () =>{
+    $("#cursor").removeClass("zoom");
+})

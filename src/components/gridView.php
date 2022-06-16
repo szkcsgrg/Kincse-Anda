@@ -19,7 +19,7 @@
             <a data-bs-toggle='modal' data-bs-target='#Modal' class='item col-5 col-md-3 text-center button_prod' id='" . $row['id'] . "'>
                 <h3 id='" . $row['id'] . "'> " . $row['name'] . "</h3>
                 <img id='" . $row['id'] . "' class='swiperImage' src='images/d.jpg' alt='Image of the Product'>
-                <h3 id='" . $row['id'] . "'>" . $row['price'] . "</h3>
+                <h4 id='" . $row['id'] . "'>" . $row['price'] . "</h4>
             </a>";
         }
     } else {
@@ -29,7 +29,7 @@
             <a data-bs-toggle='modal' data-bs-target='#Modal' class='item col-5 col-md-3 text-center button_prod' id='" . $row['id'] . "'>
                 <h3 id='" . $row['id'] . "'> " . $row['name'] . "</h3>
                 <img id='" . $row['id'] . "' class='swiperImage' src='images/d.jpg' alt='Image of the Product'>
-                <h3 id='" . $row['id'] . "'>" . $row['price'] . "</h3>
+                <h4 id='" . $row['id'] . "'>" . $row['price'] . "</h4>
             </a>";
         }
     }

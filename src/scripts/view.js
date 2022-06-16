@@ -5,5 +5,5 @@ function changeView(){
 
     $('.collectionView').toggleClass("d-none");
     $('.gridView').toggleClass("d-none");
-    
+    $('.gototop').toggleClass('d-not');
 }

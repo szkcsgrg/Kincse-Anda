@@ -28,11 +28,11 @@
 
     <?php
     include_once "components/db.php";
-    /*
-        if(Session is null){
-            Location belepes.php
-        }
-    */
+    session_start();
+    if (!isset($_SESSION['azonosito'])) {
+        Header("Location: belepes.php");
+    }
+
     ?>
 
 
@@ -43,6 +43,9 @@
 
     <div id="cursor" class="cursor d-none d-lg-block"></div>
 
+    <a href="#" id="gototop" class="gototop d-show text-center d-flex justify-content-center align-items-center"><i
+            class="bi bi-arrow-up"></i></a>
+
     <main class="container-fluid" role="main">
 
         <!-- Create Start -->
@@ -52,23 +55,39 @@
                 <div class="text-wrap">
                     <h3>Nyitvatartás Megjelenítése</h3>
                     <?php
+
                     include_once "components/db.php";
                     $openH = $conn->query("SELECT * FROM openhour ORDER BY id desc LIMIT 1");
                     while ($row = $openH->fetch_assoc()) {
                         echo "<span>" . $row["text"] . "</span>";
                     }
+
                     ?>
                 </div>
-
-                <form action="components/create-openhour.inc.php" method="POST" class="col-8">
-                    <input name="nyitvatartas" placeholder="Nyitvatartás:" class="form-control required my-1"
-                        type="text" required>
-                    <input type="date" name="eltunesiDatum" class="form-control my-1">
-                    <div class="button-wrap">
-                        <input type="button" name="save" value="Mentés" id="button_1">
-                        <input type="button" name="delete" value="Aktuális törlése" id="button_2">
+                <?php
+                include_once 'components/create-openhour.inc.php';
+                if (isset($_GET['openhour'])) {
+                    echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres</div>";
+                }
+                ?>
+                <div class="modal fade" id='Modal2' tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
             <div
                 class="col-12 col-md-6 col-lg-4 align-items-center d-flex flex-column justify-content-center text-center my-5">
@@ -76,14 +95,17 @@
                     <h3>Új elem a Galériába</h3>
                     <span>-</span>
                 </div>
+                <?php
+                include_once 'components/create-galeryimage.inc.php';
+                if (isset($_GET['galeryimage'])) {
+                    if ($_GET['galeryimage'] == 'success') {
+                        echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres</div>";
+                    } else {
+                        echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Hiba!</div>";
+                    }
+                }
+                ?>
 
-                <form action="components/create-galeryimage.inc.php" method="POST" class="col-8">
-                    <input name="szoveg" placeholder="Szöveg:" class="form-control my-1" type="text">
-                    <input type="file" name="image" class="form-control required my-1">
-                    <div class="button-wrap">
-                        <input type="button" name="save" value="Mentés" id="button_1">
-                    </div>
-                </form>
             </div>
             <div
                 class="col-12 col-md-6 col-lg-4 align-items-center d-flex flex-column justify-content-center text-center my-5">
@@ -109,6 +131,9 @@
                     </div>
                 </form>
             </div>
+
+
+
         </section>
         <!-- Create End -->
 
@@ -119,67 +144,46 @@
                     <h3>Galéria Szerkesztése</h3>
                 </div>
                 <div class="row d-flex flex-row justify-content-evenly text-wrap">
-
-                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
-                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
-                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-pencil-fill' id='pen'></i>
-                        </a>
-                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-trash-fill' id='bin'></i>
-                        </a>
-                    </div>
-                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
-                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
-                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-pencil-fill' id='pen'></i>
-                        </a>
-                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-trash-fill' id='bin'></i>
-                        </a>
-                    </div>
-                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
-                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
-                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-pencil-fill' id='pen'></i>
-                        </a>
-                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-trash-fill' id='bin'></i>
-                        </a>
-                    </div>
-                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
-                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
-                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-pencil-fill' id='pen'></i>
-                        </a>
-                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-trash-fill' id='bin'></i>
-                        </a>
-                    </div>
-                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
-                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
-                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-pencil-fill' id='pen'></i>
-                        </a>
-                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-trash-fill' id='bin'></i>
-                        </a>
-                    </div>
-                    <div class="galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4">
-                        <img id="swiperImage" src="images/d.jpg" alt="Image of the Product">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque?</span>
-                        <a href='../Values/update.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-pencil-fill' id='pen'></i>
-                        </a>
-                        <a href='../Values/remove.php?id=" . $row["idhirek"] . " '>
-                            <i class='bi bi-trash-fill' id='bin'></i>
-                        </a>
-                    </div>
+                    <?php
+                    include_once 'components/db.php';
+                    $result = $conn->query("SELECT * FROM galery");
+                    while ($row = $result->fetch_assoc()) {
+                        if (!empty($row['description'])) {
+                            echo "<div class='galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4'>
+                                    <img class='galery-image' src='images/uploads/" . $row['image'] . "' alt='Image of the Product'>
+                                    <p>" . $row['description'] . "</p>
+                                    <a href='components/edit-galeryimage.inc.php?id=" . $row["id"] . " '>
+                                        <i class='bi bi-pencil-fill' id='pen'></i>
+                                    </a>
+                                    <a href='components/delete-galeryimage.inc.php?id=" . $row["id"] . " '>
+                                        <i class='bi bi-trash-fill' id='bin'></i>
+                                    </a>
+                                </div>";
+                        } else {
+                            echo "<div class='galery-item col-10 col-md-6 col-lg-3 d-flex flex-column align-items-center my-4'>
+                                    <img class='galery-image' src='images/uploads/" . $row['image'] . "' alt='Image of the Product'>
+                                    <p>-</p>
+                                    <a href='components/edit-galeryimage.inc.php?id=" . $row["id"] . " '>
+                                        <i class='bi bi-pencil-fill' id='pen'></i>
+                                    </a>
+                                    <a href='components/delete-galeryimage.inc.php?id=" . $row["id"] . " '>
+                                        <i class='bi bi-trash-fill' id='bin'></i>
+                                    </a>
+                                </div>";
+                        }
+                    }
+                    if (isset($_GET['galeryimageED'])) {
+                        if ($_GET['galeryimageED'] == 'deleted') {
+                            echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Törlés!</div>";
+                        }
+                        if ($_GET['galeryimageED'] == 'success') {
+                            echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Szerkesztés!</div>";
+                        }
+                        if ($_GET['galeryimageED'] == 'FileSizeError' || $_GET['galeryimageED'] == 'FileError' || $_GET['galeryimageED'] == 'FileTypeError') {
+                            echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Hiba!</div>";
+                        }
+                    }
+                    ?>
 
 
                 </div>
@@ -188,53 +192,25 @@
         <!-- Galeria Edit End -->
 
         <!-- Termekek Edit Start -->
-        <scetion id="products" class="collectionView align-items-center" id='swiper'>
-            <div class="col-12 align-items-center d-flex flex-column justify-content-center my-5">
+        <section id="products" class="align-items-center">
+            <div class="col-12 align-items-center d-flex flex-column justify-content-center">
                 <div class="text-wrap my-4 text-center">
                     <h3>Termékek Szerkesztése</h3>
-                    <select class="form-control my-2 mx-2">
-                        <option value="">Csokor</option>
-                        <option value="">Koszorú</option>
-                        <option value="">Dekor</option>
+                    <select id="myDropDown" name="categorySelect" class="form-control my-2 mx-md-2">
+                        <option value='Összes'>Összes</option>
+                        <option value="Csokor">Csokor</option>
+                        <option value="Koszorú">Koszorú</option>
+                        <option value="Dekor">Dekor</option>
                     </select>
                 </div>
-                <div class='swiper col-10'>
-                    <div class='swiper-wrapper'>
-                        <?php
-                        $result = $conn->query("Select * FROM testtable");
-                        while ($row = $result->fetch_assoc()) {
-                            echo "
-                            <div class='swiper-slide d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row flex-column' data-swiper-autoplay='15000' pauseOnMouseEnter='true'>
-                                <div class='col-10 col-lg-5 text-wrap flex-column align-items-center'>
-                                    <div class='accent'>
-                                        <h3>Termék neve</h3>
-                                        <a href='termekek.php?category='><span>Termék típusa</span></a>
-                                        <p id='product-desc'>" . $row['Column 2'] . "</p>
-                                    </div>
-                                    <div>
-                                        <h3>3000-5000Ft</h3>
-                                        <div class='button-wrap'>  
-                                            <a href='../Values/update.php?id='' '>
-                                            <i class='bi bi-pencil-fill' id='pen2'></i>
-                                            </a>
-                                            <a href='../Values/remove.php?id='' '>
-                                            <i class='bi bi-trash-fill' id='bin2'></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='col-10 col-lg-6 text-center'>
-                                    <img id='swiperImage' src='images/d.jpg' alt='Image of the Product'>
-                                </div>
-                            </div>
-                            ";
-                        }
-                        ?>
-                    </div>
-                </div>
             </div>
+            <section class="collectionView" id='adminSwiper'>
+                <?php
+                include_once "components/adminSwiper.php";
+                ?>
+            </section>
             <!-- Termekek Edit End -->
-        </scetion>
+        </section>
     </main>
 
 </body>
@@ -243,7 +219,7 @@
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/navbarMenu.js"></script>
 <script src="scripts/swiper.js"></script>
-<script src='scripts/shorter.js'></script>
+<script src="scripts/productsChange.js"></script>
 <script src="scripts/cursor.js"></script>
 <script src='scripts/mouseEffects.js'></script>
 <!-- Scripts End -->

@@ -4,4 +4,11 @@ const swiper = new Swiper('.swiper', {
     },
     direction: 'horizontal',
     loop: true,
+    effect: 'slide',
+    edgeSwipeDetection: true,
+    grabCursor: true,
+    speed: 500,
   });
+
+
+  
