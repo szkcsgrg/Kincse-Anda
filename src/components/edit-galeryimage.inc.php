@@ -49,32 +49,8 @@
                 </div>
             </form>
             <?php
-
-            /*
-                select where id
-
-                if image is empty {
-                    UPDATE desc = text where id = id
-                }
-                if image is not empty{
-                    remove image from server
-                    update image = path, desc = text where id = id
-                                            if(text is empty ){
-                                                update image = path, desc = text where id = id
-                                            }
-                                            if(text is not empty){
-                                                update image = path, desc = text where id = id
-                                            }
-                }
-
-
-                */
-
-
-
-
             if (isset($_POST['cancel'])) {
-                Header("Location: ../kezelofelulet.php#galery");
+                echo "<script>location.href='../kezelofelulet.php#galery'</script>";
             }
 
             if (isset($_POST['save'])) {
@@ -94,7 +70,7 @@
                 $result = $conn->query("SELECT * FROM `kincseanda`.`galery` WHERE `id`='$id'")->fetch_array();
                 if ($fileError === 4) {
                     $conn->query("UPDATE `kincseanda`.`galery` SET `description`='$text' WHERE  `id`='$id'");
-                    header("Refresh:0 url=../kezelofelulet.php?galeryimageED=success#galery");
+                    echo "<script>location.href='../kezelofelulet.php?galeryimageED=edited#galery'</script>";
                 } else {
                     unlink('../images/uploads/' . $result['image']);
 
@@ -106,15 +82,15 @@
                                 $fileDestination = '../images/uploads/' . $fileNameNew;
                                 move_uploaded_file($fileTmpName, $fileDestination);
                                 $conn->query("UPDATE `kincseanda`.`galery` SET `image`='$fileNameNew', `description`='$text' WHERE  `id`='$id'");
-                                header("Refresh:0 url=../kezelofelulet.php?galeryimageED=success#galery");
+                                echo "<script>location.href='../kezelofelulet.php?galeryimageED=edited#galery'</script>";
                             } else {
-                                header("Refresh:0 url=../kezelofelulet.php?galeryimageED=FileSizeError#galery");
+                                echo "<script>location.href='../kezelofelulet.php?galeryimageED=FileSizeError#galery'</script>";
                             }
                         } else {
-                            header("Refresh:0 url=../kezelofelulet.php?galeryimageED=FileError#galery");
+                            echo "<script>location.href='../kezelofelulet.php?galeryimageED=FileError#galery'</script>";
                         }
                     } else {
-                        header("Refresh:0 url=../kezelofelulet.php?galeryimageED=FileTypeError#galery");
+                        echo "<script>location.href='../kezelofelulet.php?galeryimageED=FileTypeError#galery'</script>";
                     }
                 }
             }

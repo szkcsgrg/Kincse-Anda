@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Navigation Start -->
     <?php include_once "components/nav.php" ?>
     <!-- Navigation End -->
@@ -60,6 +60,7 @@
                     <option value="Csokor">Csokor</option>
                     <option value="Koszorú">Koszorú</option>
                     <option value="Dekor">Dekor</option>
+                    <option value="Aktualis">Aktuális</option>
                 </select>
                 <input placeholder="Termék neve" type="text" name="filter" id="filter"
                     class="d-none filter form-control my-2 mx-md-2">
@@ -70,7 +71,6 @@
                 </button>
             </div>
         </section>
-
 
         <section class="collectionView" id='swiper'>
             <?php
@@ -88,6 +88,7 @@
             include_once "components/modal.php";
             ?>
         </div>
+
     </main>
 
     <!-- Footer Start -->
@@ -101,6 +102,7 @@
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/navbarMenu.js"></script>
 <script src="scripts/view.js"></script>
+<script src="scripts/search.js"></script>
 <script src='scripts/swiper.js'></script>
 <script src="scripts/productsChange.js"></script>
 <script src="scripts/modalHandle.js"></script>

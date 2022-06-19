@@ -28,4 +28,7 @@
   }
 }
 @media screen and (min-width: $large) {
+  .item {
+    min-height: 52vh;
+  }
 }

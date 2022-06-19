@@ -1,9 +1,27 @@
 .product-landing {
   position: relative;
   margin-top: 10vh;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
   user-select: none;
+  // min-height: 100vh;
 }
 #prod-desc {
+  white-space: pre-line;
   color: $secondary-color;
+}
+
+.modal-body {
+  overflow: hidden;
+  background-image: url(../images/waveRotated.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media screen and (min-width: $large) {
+  .modal-body {
+    background-image: url(../images/waveRotated.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
 }

@@ -16,10 +16,12 @@
 }
 
 #swiperImage {
-  width: 60%;
+  width: 80%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
 }
 .swiperImage {
   width: 60%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
 }
 #product-desc {
   color: $secondary-color;
@@ -36,6 +38,10 @@
 }
 
 @media screen and (min-width: $medium) {
+  #swiperImage {
+    width: 60%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+  }
   .current-products {
     margin-top: 10vh;
     margin-bottom: 10vh;
@@ -46,6 +52,11 @@
   }
 }
 @media screen and (min-width: $large) {
+  #swiperImage {
+    max-height: 80vh;
+    width: 60%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+  }
   .current-products {
     margin-top: 15vh;
     margin-bottom: 15vh;

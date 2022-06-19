@@ -39,20 +39,16 @@
             include_once 'db.php';
             if (isset($_GET['id'])) {
                 if (isset($_POST['cancel'])) {
-                    Header("Location: ../kezelofelulet.php#galery");
+                    echo "<script>location.href='../kezelofelulet.php#galery'</script>";
                 }
-
                 if (isset($_POST['yes'])) {
                     $id = $_GET['id'];
                     $res = $conn->query("SELECT * FROM `kincseanda`.`galery` WHERE `id`='$id'")->fetch_array();
                     unlink('../images/uploads/' . $res['image']);
                     $conn->query("DELETE FROM `kincseanda`.`galery` WHERE  `id`='$id'");
-
-                    //Delete from uploads folder also. 
-                    Header("Location: ../kezelofelulet.php?galeryimageED=deleted#galery");
+                    echo "<script>location.href='../kezelofelulet.php?galeryimageED=deleted#galery'</script>";
                 }
             }
-
             ?>
         </section>
     </main>

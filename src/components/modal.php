@@ -10,7 +10,7 @@ echo "
             <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
         </div>
         <div class='modal-body d-flex flex-column flex-column-reverse flex-md-row '>
-            <div class='col-12 col-md-6 text-wrap flex-column align-items-center'>
+            <div class='col-12 col-md-6 text-wrap flex-column align-items-center my-5'>
                 <div class='accent margin-10'>
                     <h3>" . $row['name'] . "</h3>
                     <span>Azonosító: " . $row['id'] . "</span>
@@ -24,7 +24,7 @@ echo "
                 </div>
             </div>
             <div class='col-12 col-md-6 text-center margin-10'>
-                <img id='swiperImage' src='" . $row['image'] . "' alt='Image of the Product'>
+                <img id='swiperImage' src='./images/products/" . $row['image'] . "' alt='Image of the Product'>
             </div>
         </div>
     </div>

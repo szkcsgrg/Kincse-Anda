@@ -1,3 +1,6 @@
+<?php
+echo "";
+?>
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -30,9 +33,8 @@
     include_once "components/db.php";
     session_start();
     if (!isset($_SESSION['azonosito'])) {
-        Header("Location: belepes.php");
+        header("Location: belepes.php");
     }
-
     ?>
 
 
@@ -53,41 +55,25 @@
             <div
                 class="col-12 col-md-6 col-lg-4 align-items-center d-flex flex-column justify-content-center text-center my-5">
                 <div class="text-wrap">
-                    <h3>Nyitvatartás Megjelenítése</h3>
+                    <h3>Kezdőlap Szöveg</h3>
                     <?php
-
                     include_once "components/db.php";
                     $openH = $conn->query("SELECT * FROM openhour ORDER BY id desc LIMIT 1");
                     while ($row = $openH->fetch_assoc()) {
                         echo "<span>" . $row["text"] . "</span>";
                     }
-
                     ?>
                 </div>
                 <?php
                 include_once 'components/create-openhour.inc.php';
                 if (isset($_GET['openhour'])) {
-                    echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres</div>";
+                    if ($_GET['openhour'] == 'created') {
+                        echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Létrehozás</div>";
+                    } else {
+                        echo "<div class='alert alert-warning col-10 col-lg-8 my-1'>Sikeres Törlés</div>";
+                    }
                 }
                 ?>
-                <div class="modal fade" id='Modal2' tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Modal body text goes here.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div
                 class="col-12 col-md-6 col-lg-4 align-items-center d-flex flex-column justify-content-center text-center my-5">
@@ -98,14 +84,14 @@
                 <?php
                 include_once 'components/create-galeryimage.inc.php';
                 if (isset($_GET['galeryimage'])) {
-                    if ($_GET['galeryimage'] == 'success') {
-                        echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres</div>";
-                    } else {
+                    if ($_GET['galeryimage'] == 'created') {
+                        echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Létrehozás</div>";
+                    }
+                    if ($_GET['galeryimage'] == 'FileSizeError' || $_GET['galeryimage'] == 'FileError' || $_GET['galeryimage'] == 'FileTypeError') {
                         echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Hiba!</div>";
                     }
                 }
                 ?>
-
             </div>
             <div
                 class="col-12 col-md-6 col-lg-4 align-items-center d-flex flex-column justify-content-center text-center my-5">
@@ -113,23 +99,20 @@
                     <h3>Termék Létrehozása</h3>
                     <span>-</span>
                 </div>
-                <form action="components/create-product.inc.php" method="POST" class="col-8">
-                    <select name="ketegoria" class="form-control required my-1">
-                        <option value="Csokor">Csokor</option>
-                        <option value="Koszorú">Koszorú</option>
-                        <option value="Dekor">Dekor</option>
-                    </select>
-                    <input name="megnevezes" placeholder="Megnevezés:" class="form-control required my-1" type="text"
-                        required>
-                    <textarea name="leiras" placeholder="Leírás" class="form-control required my-1" required></textarea>
-                    <input name="ar" placeholder="Ár:" class="form-control required my-1" type="text" required>
-                    <input type="file" name="image" class="form-control required my-1">
-                    <input name="aktualis" type="checkbox" id="aktualis">
-                    <label for=" aktualis">Aktuális termék</label>
-                    <div class="button-wrap">
-                        <input type="button" name="save" value="Mentés" id="button_1">
-                    </div>
-                </form>
+                <?php
+                include_once "components/create-product.inc.php";
+                if (isset($_GET['product'])) {
+                    if ($_GET['product'] == 'created') {
+                        echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Létrehozás!</div>";
+                    }
+                    if ($_GET['product'] == 'FileSizeError' || $_GET['product'] == 'FileError' || $_GET['product'] == 'FileTypeError') {
+                        echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Hiba!</div>";
+                    }
+                    if ($_GET['product'] == 'characterError') {
+                        echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Illetéktelen karatker használata!</div>";
+                    }
+                }
+                ?>
             </div>
 
 
@@ -172,19 +155,23 @@
                                 </div>";
                         }
                     }
-                    if (isset($_GET['galeryimageED'])) {
-                        if ($_GET['galeryimageED'] == 'deleted') {
-                            echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Törlés!</div>";
-                        }
-                        if ($_GET['galeryimageED'] == 'success') {
-                            echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Szerkesztés!</div>";
-                        }
-                        if ($_GET['galeryimageED'] == 'FileSizeError' || $_GET['galeryimageED'] == 'FileError' || $_GET['galeryimageED'] == 'FileTypeError') {
-                            echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Hiba!</div>";
-                        }
-                    }
                     ?>
 
+                    <div class="col-12 text-center d-flex justify-content-center align-items-center">
+                        <?php
+                        if (isset($_GET['galeryimageED'])) {
+                            if ($_GET['galeryimageED'] == 'deleted') {
+                                echo "<div class='alert alert-warning col-10 col-lg-8 my-1'>Sikeres Törlés!</div>";
+                            }
+                            if ($_GET['galeryimageED'] == 'edited') {
+                                echo "<div class='alert alert-success col-10 col-lg-8 my-1'>Sikeres Szerkesztés!</div>";
+                            }
+                            if ($_GET['galeryimageED'] == 'FileSizeError' || $_GET['galeryimageED'] == 'FileError' || $_GET['galeryimageED'] == 'FileTypeError') {
+                                echo "<div class='alert alert-danger col-10 col-lg-8 my-1'>Hiba!</div>";
+                            }
+                        }
+                        ?>
+                    </div>
 
                 </div>
             </div>
@@ -201,6 +188,7 @@
                         <option value="Csokor">Csokor</option>
                         <option value="Koszorú">Koszorú</option>
                         <option value="Dekor">Dekor</option>
+                        <option value="Aktualis">Aktuális</option>
                     </select>
                 </div>
             </div>
@@ -210,6 +198,21 @@
                 ?>
             </section>
             <!-- Termekek Edit End -->
+            <div class="col-12 text-center d-flex justify-content-center align-items-center my-2">
+                <?php
+                if (isset($_GET['products'])) {
+                    if ($_GET['products'] == 'deleted') {
+                        echo "<div class='alert alert-warning col-10 col-lg-4 my-1'>Sikeres Törlés!</div>";
+                    }
+                    if ($_GET['products'] == 'edited') {
+                        echo "<div class='alert alert-success col-10 col-lg-4 my-1'>Sikeres Szerkesztés!</div>";
+                    }
+                    if ($_GET['products'] == 'FileSizeError' || $_GET['products'] == 'FileError' || $_GET['products'] == 'FileTypeError') {
+                        echo "<div class='alert alert-danger col-10 col-lg-4 my-1'>Hiba!</div>";
+                    }
+                }
+                ?>
+            </div>
         </section>
     </main>
 

@@ -1,5 +1,4 @@
 <footer id="footer" class="row mt-auto">
-
     <div class="col-12 col-md-6 px-4">
         <h4>Elérhetőségek</h4>
         <div class="footer-text-wrap">

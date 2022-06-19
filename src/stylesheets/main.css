@@ -543,11 +543,13 @@ footer {
 }
 
 #swiperImage {
-  width: 60%;
+  width: 80%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
 }
 
 .swiperImage {
   width: 60%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
 }
 
 #product-desc {
@@ -559,6 +561,11 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  #swiperImage {
+    width: 60%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+  }
+
   .current-products {
     margin-top: 10vh;
     margin-bottom: 10vh;
@@ -570,6 +577,12 @@ footer {
   }
 }
 @media screen and (min-width: 992px) {
+  #swiperImage {
+    max-height: 80vh;
+    width: 60%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
+  }
+
   .current-products {
     margin-top: 15vh;
     margin-bottom: 15vh;
@@ -609,6 +622,11 @@ footer {
     padding: 0;
     margin-left: 0.5em;
     margin-right: 0.5em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .item {
+    min-height: 52vh;
   }
 }
 .home-landing {
@@ -697,7 +715,7 @@ footer {
 .product-landing {
   position: relative;
   margin-top: 10vh;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -705,9 +723,26 @@ footer {
 }
 
 #prod-desc {
+  white-space: pre-line;
   color: #94939f;
 }
 
+.modal-body {
+  overflow: hidden;
+  background-image: url(../images/waveRotated.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 992px) {
+  .modal-body {
+    background-image: url(../images/waveRotated.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}
 .contact-landing {
   min-height: 45vh;
   margin-top: 10vh;
@@ -727,6 +762,7 @@ input {
 }
 
 .galery-image {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
   width: 60%;
 }
 

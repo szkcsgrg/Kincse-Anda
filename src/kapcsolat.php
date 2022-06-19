@@ -43,6 +43,13 @@
                 </div>
             </form>
         </section>
+        <div class="row text-center d-flex justify-content-center align-items-center">
+            <?php
+            if (isset($_GET['message'])) {
+                echo "<div class='alert alert-success col-10 col-lg-4 my-1'>Üzenet elküldve!</div>";
+            }
+            ?>
+        </div>
     </main>
 
     <!-- Footer Start -->

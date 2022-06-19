@@ -1,13 +1,4 @@
-<form action="components/create-galeryimage.inc.php" method="POST" class="col-8" enctype="multipart/form-data">
-    <input name="szoveg" placeholder="Szöveg:" class="form-control my-1" type="text">
-    <input type="file" name="image" class="form-control required my-1">
-    <div class="button-wrap">
-        <input type="submit" name="galery_save" value="Mentés" id="button_1">
-    </div>
-</form>
 <?php
-
-// Vars
 include_once 'db.php';
 if (isset($_POST['galery_save'])) {
     $text = $_POST['szoveg'];
@@ -27,23 +18,31 @@ if (isset($_POST['galery_save'])) {
         if ($fileError === 0) {
             if ($fileSize < 1000000) {
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                $fileDestination = '../images/uploads/' . $fileNameNew;
+                $fileDestination = './images/uploads/' . $fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 if (!empty($text)) {
                     $conn->query("INSERT INTO `kincseanda`.`galery` (`image`, `description`) VALUES ('$fileNameNew', '$text')");
-                    header("Refresh:0 url=../kezelofelulet.php?galeryimage=success");
+                    echo "<script>location.href='./kezelofelulet.php?galeryimage=created'</script>";
                 }
                 if (empty($text)) {
                     $conn->query("INSERT INTO `kincseanda`.`galery` (`image`) VALUES ('$fileNameNew')");
-                    header("Refresh:0 url=../kezelofelulet.php?galeryimage=success");
+                    echo "<script>location.href='./kezelofelulet.php?galeryimage=created'</script>";
                 }
             } else {
-                header("Refresh:0 url=../kezelofelulet.php?galeryimage=FileSizeError");
+                echo "<script>location.href='./kezelofelulet.php?galeryimage=FileSizeError'</script>";
             }
         } else {
-            header("Refresh:0 url=../kezelofelulet.php?galeryimage=FileError");
+            echo "<script>location.href='./kezelofelulet.php?galeryimage=FileError'</script>";
         }
     } else {
-        header("Refresh:0 url=../kezelofelulet.php?galeryimage=FileTypeError");
+        echo "<script>location.href='./kezelofelulet.php?galeryimage=FileTypeError'</script>";
     }
 }
+?>
+<form method="POST" class="col-8" enctype="multipart/form-data" onsubmit="return confirm('Biztos?');">
+    <input name="szoveg" placeholder="Szöveg:" class="form-control my-1" type="text">
+    <input type="file" name="image" class="form-control required my-1">
+    <div class="button-wrap">
+        <input type="submit" name="galery_save" value="Mentés" id="button_1">
+    </div>
+</form>

@@ -197,7 +197,7 @@
                             </div>
                         </div>
                         <div class='col-10 col-lg-6 text-center'>
-                            <img id='swiperImage' src='" . $row['image'] . "' alt='Image of the Product'>
+                            <img id='swiperImage' src='./images/products/" . $row['image'] . "' alt='Image of the Product'>
                         </div>
                     </div>
                     ";
