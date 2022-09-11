@@ -72,10 +72,10 @@ body {
   color: $main-color;
 }
 .drag::after {
-  content: "Húzza";
+  content: "Húzd";
   position: absolute;
   top: 0.8em;
-  left: 0.2em;
+  left: 0.4em;
 }
 .bttn {
   visibility: hidden;

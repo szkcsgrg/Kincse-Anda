@@ -10,20 +10,28 @@
     <title>Kincse Adna - Csokor, Koszorú, Dekor</title>
 
     <!-- SEO -->
-    <meta name="og:title" content="">
-    <meta name="og:type" content="">
+    <meta name="og:title" content="Kincse Adna - Csokor, Koszorú, Dekor">
+    <meta name="og:type" content="webshop">
     <meta name="og:url" content="">
     <meta name="url" content="">
-    <meta name="og:image" content="">
-    <meta name="description" content="">
-    <meta name="og:description" content="">
+    <meta name="og:image" content="Images/icon.png">
+    <meta name="description" content="2021 októberében elindítottam kis vállalkozásomat, ami által csokrok, koszorúk, dekorációk,
+                        ajándékbox készítésével foglalkozom.
+                        Stílusom modern és letisztult, az aktuális trendekhez igazodik, de szívesen megvalósítom egyedi
+                        elképzelés alapján a rendelésedet.">
+    <meta name="og:description" content="2021 októberében elindítottam kis vállalkozásomat, ami által csokrok, koszorúk, dekorációk,
+                        ajándékbox készítésével foglalkozom.
+                        Stílusom modern és letisztult, az aktuális trendekhez igazodik, de szívesen megvalósítom egyedi
+                        elképzelés alapján a rendelésedet.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:title" content="Kincse Adna - Csokor, Koszorú, Dekor">
+    <meta name="twitter:description"
+        content="2021 októberében elindítottam kis vállalkozásomat, ami által csokrok, koszorúk, dekorációk, ajándékbox készítésével foglalkozom.
+    Stílusom modern és letisztult, az aktuális trendekhez igazodik, de szívesen megvalósítom egyedi elképzelés alapján a rendelésedet.">
+    <meta name="twitter:image" content="Images/icon.png">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -59,10 +67,12 @@
 
             <div class="col-12 col-lg-4">
                 <div class="text-wrap">
-                    <h1>Kincse Anda - Csokor, Koszorú, Dekor</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h1>Üdvözöllek A virágos műhely oldalon!</h1>
+                    <p>2021 októberében elindítottam kis vállalkozásomat, ami által csokrok, koszorúk, dekorációk,
+                        ajándékbox készítésével foglalkozom. <br>
+                        Stílusom modern és letisztult, az aktuális trendekhez igazodik, de szívesen megvalósítom egyedi
+                        elképzelés alapján a rendelésedet.
+                    </p>
                 </div>
                 <div class="button-wrap">
                     <a id="button_1" href="galeria.php">Galéria</a>
@@ -135,7 +145,6 @@
                         </g>
                     </g>
                 </svg>
-
             </div>
         </section>
         <!-- Landing End -->
@@ -148,24 +157,21 @@
                 <a href="termekek.php" class="col-12 col-md-4 item-wrap text-center px-4">
                     <img id="csokorIMG" src="images/home/menu/csokor.png" alt="Menu Image">
                     <h3>Csokor</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil assumenda architecto et placeat
-                        velit suscipit?</p>
+                    <p>Élő, száraz és selyemvirágokból</p>
                 </a>
                 <a href="termekek.php" class="col-12 col-md-4 item-wrap text-center px-4">
                     <img id="koszoruIMG" src="images/home/menu/koszoru.png" alt="Menu Image">
                     <h3>Koszorú</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil assumenda architecto etplaceat
-                        velit suscipit?</p>
+                    <p>Koszorúk, sírdíszek, sírtálak</p>
                 </a>
                 <a href="termekek.php" class="col-12 col-md-4 item-wrap text-center px-4">
                     <img id="dekorIMG" src="images/home/menu/dekor.png" alt="Menu Image">
                     <h3>Dekor</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil assumenda architecto et placeat
-                        velit suscipit?</p>
+                    <p>Egyedi dekorációk, lakásdíszek, ajándékboxok</p>
                 </a>
             </div>
-            <div class="text-center text-wrap my-3">
-                <p>Egyéb munkáimat a <a class="link" href="galeria.php">Galériában</a> megtalálhatja.</p>
+            <div class="text-center text-wrap my-5">
+                <p>Egyéb munkáimat a <a class="link" href="galeria.php">Galériában</a> megtalálhatod.</p>
             </div>
         </section>
         <!-- Menu End -->

@@ -117,10 +117,10 @@ body {
 }
 
 .drag::after {
-  content: "Húzza";
+  content: "Húzd";
   position: absolute;
   top: 0.8em;
-  left: 0.2em;
+  left: 0.4em;
 }
 
 .bttn {
@@ -287,7 +287,6 @@ body {
   .margin-10 {
     margin: 5vh;
   }
-
   .gototop {
     right: 1em;
     bottom: 1em;
@@ -297,7 +296,6 @@ body {
   .margin-10 {
     margin: 10vh;
   }
-
   .gototop {
     right: 1.5em;
     bottom: 1.5em;
@@ -502,7 +500,6 @@ footer {
     padding-left: 1.5em;
     padding-right: 1.5em;
   }
-
   .footer-text-wrap {
     margin-left: 2em;
     margin-right: 2em;
@@ -514,7 +511,6 @@ footer {
     padding-left: 2.5em;
     padding-right: 2.5em;
   }
-
   .footer-text-wrap {
     margin-left: 3em;
     margin-right: 3em;
@@ -565,12 +561,10 @@ footer {
     width: 60%;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
   }
-
   .current-products {
     margin-top: 10vh;
     margin-bottom: 10vh;
   }
-
   .swiper-wrapper {
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -582,12 +576,10 @@ footer {
     width: 60%;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.28);
   }
-
   .current-products {
     margin-top: 15vh;
     margin-bottom: 15vh;
   }
-
   .swiper-wrapper {
     margin-top: 7.5vh;
     margin-bottom: 7.5vh;
@@ -693,7 +685,6 @@ footer {
     margin-top: 10vh;
     margin-bottom: 10vh;
   }
-
   .menu-items {
     padding-top: 7.5vh;
     padding-bottom: 7.5vh;
@@ -706,7 +697,6 @@ footer {
     margin-top: 10vh;
     margin-bottom: 10vh;
   }
-
   .menu-items {
     padding-top: 10vh;
     padding-bottom: 10vh;

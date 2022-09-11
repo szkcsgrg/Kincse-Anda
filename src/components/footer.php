@@ -3,18 +3,15 @@
         <h4>Elérhetőségek</h4>
         <div class="footer-text-wrap">
             <p onclick="copy('+36304696219')" id="liveAlertBtn"><i class="bi bi-telephone-fill"></i><span
-                    title="Kattintson a másoláshoz" data-bs-toggle="tooltip"
+                    title="Kattints a másoláshoz" data-bs-toggle="tooltip"
                     data-bs-placement="right">+36-30-469-6219</span></p>
             <p onclick="copy('anda.901029@windowslive.com')" id="liveAlertBtn"><i class="bi bi-envelope-fill"></i><span
-                    title="Kattintson a másoláshoz" data-bs-toggle="tooltip"
+                    title="Kattints a másoláshoz" data-bs-toggle="tooltip"
                     data-bs-placement="right">anda.901029@windowslive.com</span>
             </p>
             <div class="col-10 col-lg-8 my-1" id="liveAlertPlaceholder"></div>
             <br>
-            <o>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam et necessitatibus facere,
-                exercitationem laboriosam officia.
-            </o>
+
             <div class="social">
                 <a href="https://www.facebook.com/profile.php?id=100072090442948"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/andakincse/"><i class="bi bi-instagram"></i></a>

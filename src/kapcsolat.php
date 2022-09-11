@@ -32,14 +32,14 @@
 
     <main class="container-fluid" role="main">
         <section class="row contact-landing d-flex flex-column align-items-center text-center text-wrap">
-            <h1 class="my-5">Mondja el elképzelését</h1>
+            <h1 class="my-5">Mond el elképzelésed</h1>
 
             <form method="POST" action="components/sendmail.inc.php" class="col-8 col-md-6 col-lg-4">
                 <input name="email" placeholder="Email" class="form-control required my-1" type="email" required>
                 <input name="phone" placeholder="Telefon" class="form-control required my-1" type="tel" required>
                 <textarea name="message" placeholder="Üzenet" class="form-control required my-1" required></textarea>
                 <div class="button-wrap">
-                    <input type="submit" name="submit" value="Küld" id="button_1" class="my-3">
+                    <input type="submit" name="submit" value="Küldés" id="button_1" class="my-3">
                 </div>
             </form>
         </section>
