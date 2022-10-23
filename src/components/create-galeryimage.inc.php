@@ -12,20 +12,20 @@ if (isset($_POST['galery_save'])) {
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
 
-    $allowed = array('jpeg', 'jpg', 'png', 'heic',);
+    $allowed = array('jpeg', 'jpg', 'png', 'heic','JPEG', 'JPG', 'PNG', 'HEIC');
 
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 1000000) {
+            if ($fileSize < 2000000) {
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                 $fileDestination = './images/uploads/' . $fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 if (!empty($text)) {
-                    $conn->query("INSERT INTO `kincseanda`.`galery` (`image`, `description`) VALUES ('$fileNameNew', '$text')");
+                    $conn->query("INSERT INTO `galery` (`image`, `description`) VALUES ('$fileNameNew', '$text')");
                     echo "<script>location.href='./kezelofelulet.php?galeryimage=created'</script>";
                 }
                 if (empty($text)) {
-                    $conn->query("INSERT INTO `kincseanda`.`galery` (`image`) VALUES ('$fileNameNew')");
+                    $conn->query("INSERT INTO `galery` (`image`) VALUES ('$fileNameNew')");
                     echo "<script>location.href='./kezelofelulet.php?galeryimage=created'</script>";
                 }
             } else {

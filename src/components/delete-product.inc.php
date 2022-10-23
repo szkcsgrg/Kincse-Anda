@@ -43,9 +43,9 @@
                 }
                 if (isset($_POST['yes'])) {
                     $id = $_GET['id'];
-                    $res = $conn->query("SELECT * FROM `kincseanda`.`products` WHERE `id`='$id'")->fetch_array();
+                    $res = $conn->query("SELECT * FROM `products` WHERE `id`='$id'")->fetch_array();
                     unlink('../images/products/' . $res['image']);
-                    $conn->query("DELETE FROM `kincseanda`.`products` WHERE  `id`='$id'");
+                    $conn->query("DELETE FROM `products` WHERE  `id`='$id'");
                     echo "<script>location.href='../kezelofelulet.php?products=deleted#products'</script>";
                 }
             }

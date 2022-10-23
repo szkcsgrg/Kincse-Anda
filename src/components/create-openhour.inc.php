@@ -4,11 +4,11 @@ if (isset($_POST['openHour_save'])) {
     $text = $_POST['nyitvatartas'];
     $date = $_POST['eltunesiDatum'];
     if (isset($text) && !empty($date)) {
-        $conn->query("INSERT INTO `kincseanda`.`openhour` (`text`, `deleteDate`) VALUES ('$text', '$date')");
+        $conn->query("INSERT INTO `openhour` (`text`, `deleteDate`) VALUES ('$text', '$date')");
         echo "<script>location.href='./kezelofelulet.php?openhour=created'</script>";
     }
     if (isset($text) && empty($date)) {
-        $conn->query("INSERT INTO `kincseanda`.`openhour` (`text`) VALUES ('$text')");
+        $conn->query("INSERT INTO `openhour` (`text`) VALUES ('$text')");
         echo "<script>location.href='./kezelofelulet.php?openhour=created'</script>";
     }
 }
@@ -17,7 +17,7 @@ if (isset($_POST['openHour_delete'])) {
     while ($row = $current->fetch_assoc()) {
         $id = $row["id"];
     }
-    $conn->query("DELETE FROM `kincseanda`.`openhour` WHERE  `id`=$id");
+    $conn->query("DELETE FROM `openhour` WHERE  `id`=$id");
     echo "<script>location.href='./kezelofelulet.php?openhour=deleted'</script>";
 }
 ?>

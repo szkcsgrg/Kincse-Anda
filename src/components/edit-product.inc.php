@@ -35,7 +35,7 @@
             //Select from with ID
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $result = $conn->query("SELECT * FROM `kincseanda`.`products` WHERE `id`='$id'")->fetch_array();
+                $result = $conn->query("SELECT * FROM `products` WHERE `id`='$id'")->fetch_array();
                 if ($result['current_e'] == 1) {
                     $aktualis_E = 'yes';
                 } else {
@@ -96,9 +96,9 @@
                 $allowed = array('jpeg', 'jpg', 'png', 'heic',);
                 #endregion vars
 
-                $result = $conn->query("SELECT * FROM `kincseanda`.`galery` WHERE `id`='$id'")->fetch_array();
+                $result = $conn->query("SELECT * FROM `galery` WHERE `id`='$id'")->fetch_array();
                 if ($fileError === 4) {
-                    $conn->query("UPDATE `kincseanda`.`products` SET `category`='$category', `current_e`='$aktualis', `name`='$name', `description`='$text', `price`='$ar' WHERE  `id`='$id'");
+                    $conn->query("UPDATE `products` SET `category`='$category', `current_e`='$aktualis', `name`='$name', `description`='$text', `price`='$ar' WHERE  `id`='$id'");
                     echo "<script>location.href='../kezelofelulet.php?products=edited#products'</script>";
                 } else {
                     unlink('../images/products/' . $result['image']);
@@ -108,7 +108,7 @@
                                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                                 $fileDestination = '../images/products/' . $fileNameNew;
                                 move_uploaded_file($fileTmpName, $fileDestination);
-                                $conn->query("UPDATE `kincseanda`.`products` SET `category`='$category', `current_e`='$aktualis', `name`='$name', `description`='$text', `price`='$ar', `image`='$fileNameNew' WHERE  `id`='$id'");
+                                $conn->query("UPDATE `products` SET `category`='$category', `current_e`='$aktualis', `name`='$name', `description`='$text', `price`='$ar', `image`='$fileNameNew' WHERE  `id`='$id'");
                                 echo "<script>location.href='../kezelofelulet.php?products=edited#products'</script>";
                             } else {
                                 echo "<script>location.href='../kezelofelulet.php?products=FileSizeError#products'</script>";

@@ -9,7 +9,7 @@ $pwRe = $_POST['passwordRe'];
 if (isset($_POST['azonosito']) && isset($_POST['password']) && isset($_POST['passwordRe'])) {
     if ($pw == $pwRe) {
         $hashedpw = password_hash($pw, PASSWORD_DEFAULT);
-        $conn->query("INSERT INTO `kincseanda`.`users` (`id`, `pw`) VALUES ('$id', '$hashedpw')");
+        $conn->query("INSERT INTO `users` (`id`, `pw`) VALUES ('$id', '$hashedpw')");
         Header("Location: ../belepes.php");
     } else {
         echo 'A két jelszó nem egyezik.';

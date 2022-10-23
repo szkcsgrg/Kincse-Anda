@@ -4,11 +4,11 @@ if (isset($_POST['submit'])) {
     $phone = $_POST['phone'];
     $message =  $_POST['message'];
 
-    $to = "szkcsgrg@gmail.com";
+    $to = "anda.901029@windowslive.com";
     $subject = "Weboldalról küldve.";
     $body = "";
     $body .= "Küldő: \r\n";
-    $body .= "Email cím:" . $email . "\r\n";
+    $body .= "Email cím: " . $email . "\r\n";
     $body .= "Telefonszám:" . $phone . "\r\n";
     $body .= "\r\n" .  $message . "\r\n";
 

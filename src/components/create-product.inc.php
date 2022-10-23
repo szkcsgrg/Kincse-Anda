@@ -30,11 +30,11 @@ if (isset($_POST['product_save'])) {
                 $fileDestination = './images/products/' . $fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 if (!empty($aktualis)) {
-                    $conn->query("INSERT INTO `kincseanda`.`products` (`category`, `current_e`, `name`, `description`, `price`, `image`) VALUES ('$category', '1', '$megnevezes', '$leiras', '$ar', '$fileNameNew')");
+                    $conn->query("INSERT INTO `products` (`category`, `current_e`, `name`, `description`, `price`, `image`) VALUES ('$category', '1', '$megnevezes', '$leiras', '$ar', '$fileNameNew')");
                     echo "<script>location.href='./kezelofelulet.php?product=created'</script>";
                 }
                 if (empty($aktualis)) {
-                    $conn->query("INSERT INTO `kincseanda`.`products` (`category`, `current_e`, `name`, `description`, `price`, `image`) VALUES ('$category', '0', '$megnevezes', '$leiras', '$ar', '$fileNameNew')");
+                    $conn->query("INSERT INTO `products` (`category`, `current_e`, `name`, `description`, `price`, `image`) VALUES ('$category', '0', '$megnevezes', '$leiras', '$ar', '$fileNameNew')");
                     echo "<script>location.href='./kezelofelulet.php?product=created'</script>";
                 }
             } else {

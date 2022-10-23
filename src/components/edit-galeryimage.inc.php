@@ -35,7 +35,7 @@
             //Select from with ID
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $result = $conn->query("SELECT * FROM `kincseanda`.`galery` WHERE `id`='$id'")->fetch_array();
+                $result = $conn->query("SELECT * FROM `galery` WHERE `id`='$id'")->fetch_array();
             }
             //Set values
             ?>
@@ -67,9 +67,9 @@
                 $fileActualExt = strtolower(end($fileExt));
                 $allowed = array('jpeg', 'jpg', 'png', 'heic',);
                 #endregion vars
-                $result = $conn->query("SELECT * FROM `kincseanda`.`galery` WHERE `id`='$id'")->fetch_array();
+                $result = $conn->query("SELECT * FROM `galery` WHERE `id`='$id'")->fetch_array();
                 if ($fileError === 4) {
-                    $conn->query("UPDATE `kincseanda`.`galery` SET `description`='$text' WHERE  `id`='$id'");
+                    $conn->query("UPDATE `galery` SET `description`='$text' WHERE  `id`='$id'");
                     echo "<script>location.href='../kezelofelulet.php?galeryimageED=edited#galery'</script>";
                 } else {
                     unlink('../images/uploads/' . $result['image']);
@@ -81,7 +81,7 @@
                                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                                 $fileDestination = '../images/uploads/' . $fileNameNew;
                                 move_uploaded_file($fileTmpName, $fileDestination);
-                                $conn->query("UPDATE `kincseanda`.`galery` SET `image`='$fileNameNew', `description`='$text' WHERE  `id`='$id'");
+                                $conn->query("UPDATE `galery` SET `image`='$fileNameNew', `description`='$text' WHERE  `id`='$id'");
                                 echo "<script>location.href='../kezelofelulet.php?galeryimageED=edited#galery'</script>";
                             } else {
                                 echo "<script>location.href='../kezelofelulet.php?galeryimageED=FileSizeError#galery'</script>";

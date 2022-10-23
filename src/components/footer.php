@@ -3,8 +3,8 @@
         <h4>Elérhetőségek</h4>
         <div class="footer-text-wrap">
             <p onclick="copy('+36304696219')" id="liveAlertBtn"><i class="bi bi-telephone-fill"></i><span
-                    title="Kattints a másoláshoz" data-bs-toggle="tooltip"
-                    data-bs-placement="right">+36-30-469-6219</span></p>
+                    title="Kattints a másoláshoz" data-bs-toggle="tooltip" data-bs-placement="right">+36304696219</span>
+            </p>
             <p onclick="copy('anda.901029@windowslive.com')" id="liveAlertBtn"><i class="bi bi-envelope-fill"></i><span
                     title="Kattints a másoláshoz" data-bs-toggle="tooltip"
                     data-bs-placement="right">anda.901029@windowslive.com</span>
